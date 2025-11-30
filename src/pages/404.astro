@@ -1,0 +1,8 @@
+---
+import language_config from "../config/language_config";
+import RootLayout from "../components/layouts/RootLayout.astro";
+---
+
+<RootLayout title="Loading..." language={language_config.default_language}>
+    <script src="../scripts/language_redirect.ts"></script>
+</RootLayout>

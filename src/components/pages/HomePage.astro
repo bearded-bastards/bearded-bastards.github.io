@@ -1,0 +1,12 @@
+---
+import type { Languages } from "../../config/language_config";
+import CardLayout from "../layouts/CardLayout.astro";
+
+interface Props {
+    language: Languages;
+};
+---
+
+<CardLayout language={Astro.props.language}>
+
+</CardLayout>

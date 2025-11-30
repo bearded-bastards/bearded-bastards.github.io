@@ -1,0 +1,10 @@
+---
+import RootLayout, { type RootLayoutProps } from "./RootLayout.astro";
+
+interface Props extends RootLayoutProps {};
+export type CardLayoutProps = Props;
+---
+
+<RootLayout {...Astro.props}>
+    <slot />
+</RootLayout>
