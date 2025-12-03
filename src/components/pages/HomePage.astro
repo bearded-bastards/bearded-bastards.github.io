@@ -7,6 +7,7 @@ import translate from "../../utils/content/translation";
 import laurel_icon from "../../assets/icons/laurels.svg";
 import certifications from "../../content/certifications";
 import type { Languages } from "../../config/language_config";
+import contact_information from "../../content/contact_information";
 import owner_signature from "../../assets/images/owner_signature.svg";
 import owner_portrait from "../../assets/images/ashley_deployment.webp";
 import { contact_link, services_link } from "../../config/naviagtion_config";
@@ -131,7 +132,7 @@ interface Props {
         <div>
             {services.map((service) => (
                 <div>
-                    
+
                 </div>
             ))}
         </div>
@@ -139,7 +140,7 @@ interface Props {
 
     <!-- * Contact Section * -->
     <section id="contact-section">
-        <div class="title-container">
+        <div class="title-container contact-title-container">
             <h1 class="text-xl text-lighter">
                 {translate(Astro.props.language, "home_page", "contact_heading")}
             </h1>
@@ -149,6 +150,23 @@ interface Props {
             </h2>
 
             <div class="bbgs-divider" />
+        </div>
+
+        <div class="contact-information-container">
+            {contact_information.map((contact, index) => (
+                <a href={contact.href} class="contact-information-pane">
+                    <Image
+                        src={contact.icon}
+                        alt={`Certificate-${index}`}
+                        loading="lazy"
+                        class="contact-information-icon"
+                    />
+
+                    <span>
+                        {contact.information}
+                    </span>
+                </a>
+            ))}
         </div>
     </section>
 </NavLayout>

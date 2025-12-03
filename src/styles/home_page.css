@@ -91,3 +91,45 @@
 #services-section {
     padding: 0 2rem;
 }
+
+.contact-title-container {
+    padding: 0 2rem;
+}
+
+.contact-information-container {
+    margin: 2rem 2rem 0 2rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-information-pane {
+    color: var(--color-light);
+    background-color: var(--color-darker);
+    border: 1px solid var(--color-primary);
+
+    padding: 0.5rem 1rem;
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+
+    text-decoration: none;
+    transition:
+        color 150ms ease-in-out 0s,
+        background-color 150ms ease-in-out 0s,
+        border-color 150ms ease-in-out 0s;
+}
+
+.contact-information-pane:hover {
+    color: var(--color-lighter);
+    background-color: var(--color-mid);
+    border-color: var(--color-lighter);
+}
+
+.contact-information-icon {
+    width: 2rem;
+    height: auto;
+}
