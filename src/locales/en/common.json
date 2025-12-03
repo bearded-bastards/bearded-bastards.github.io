@@ -1,3 +1,14 @@
 {
-    "site_description": "Bearded Bastards Gunsmithing - Custom firearms built with precision and care."
+    "site_description": "Bearded Bastards Gunsmithing - Custom firearms built with precision and care.",
+
+    "nav_title": "BEARDED BASTARDS",
+    "nav_subtitle": "Gunsmithing",
+
+    "nav_home": "HOME",
+    "nav_about": "ABOUT US",
+    "nav_certifications": "CERTIFICATIONS",
+    "nav_services": "SERVICES",
+    "nav_contact": "CONTACT",
+
+    "footer_rights": "BEARDED BASTARDS - © COPYRIGHT"
 }

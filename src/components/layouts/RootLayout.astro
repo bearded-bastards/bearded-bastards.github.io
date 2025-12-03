@@ -10,10 +10,6 @@ interface Props {
     title?: string;
     language: Languages;
     additional_links?: PageLink[];
-
-    id?: string;
-    class?: string;
-    style?: string | astroHTML.JSX.CSSProperties;
 };
 export type RootLayoutProps = Props;
 
@@ -51,7 +47,8 @@ const page_title: string = (
 
         <title>{page_title}</title>
     </head>
-    <body id={Astro.props.id} class={Astro.props.class} style={Astro.props.style}>
+    
+    <body>
         <slot/>
     </body>
 </html>

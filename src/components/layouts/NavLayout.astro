@@ -1,0 +1,79 @@
+---
+import "../../styles/nav_layout.css";
+import Image from "astro/components/Image.astro";
+import bbgs_logo from "../../assets/logos/bbgs.webp";
+import translate from "../../utils/content/translation";
+import RootLayout, { type RootLayoutProps } from "./RootLayout.astro";
+import navigation_links, { home_link } from "../../config/naviagtion_config";
+
+interface Props extends RootLayoutProps {
+    id?: string;
+    class?: string;
+    style?: string | astroHTML.JSX.CSSProperties;
+};
+---
+
+<RootLayout {...Astro.props}>
+    <nav class="bbgs-nav-bar">
+        <a href={home_link.href} class="bbgs-nav-logo-container">
+            <Image
+                src={bbgs_logo}
+                alt="Nav-Bar-BBGS-Logo"
+                loading="eager"
+                class="bbgs-nav-logo"
+            />
+
+            <div>
+                <b class="text-lighter">
+                    {translate(Astro.props.language, "common", "nav_title")}
+                </b>
+
+                <br/>
+
+                <b class="text-light">
+                    {translate(Astro.props.language, "common", "nav_subtitle")}
+                </b>
+            </div>
+        </a>
+
+        <div class="bbgs-nav-link-container">
+            {navigation_links.map((link) => (
+                <a href={link.href} class="bbgs-nav-link">
+                    {translate(Astro.props.language, "common", link.common_translation_key)}
+                </a>
+            ))}
+        </div>
+    </nav>
+
+    <div
+        id={Astro.props.id}
+        class={Astro.props.class}
+        style={Astro.props.style}
+    >
+        <slot />
+    </div>
+
+    <footer>
+        <div class="bbgs-footer-content-container">
+            <Image
+                src={bbgs_logo}
+                alt="Footer-BBGS-Logo"
+                loading="lazy"
+            />
+
+            <div class="bbgs-footer-link-container">
+                {navigation_links.map((link) => (
+                    <a href={link.href} class="bbgs-nav-link">
+                        {translate(Astro.props.language, "common", link.common_translation_key)}
+                    </a>
+                ))}
+            </div>
+        </div>
+
+        <div id="bbgs-footer-rights-container">
+            {translate(Astro.props.language, "common", "footer_rights")}
+        </div>
+    </footer>
+
+    <script src="../../scripts/nav_layout.ts" />
+</RootLayout>

@@ -1,0 +1,93 @@
+.home-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+}
+
+#hero-section {
+    height: calc(80vh - 8rem);
+    min-height: fit-content;
+
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.hero-btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;;
+}
+
+#about-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: start;
+    gap: 2rem;
+
+    padding: 0 2rem;
+}
+
+.about-owner-portrait {
+    width: 400px;
+    max-width: 60vw;
+    height: auto;
+
+    border-radius: 2rem 0 2rem 0;
+}
+
+.about-content-container {
+    width: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.about-paragraph {
+    max-width: 400px;
+    text-align: justify;
+}
+
+#certifications-section {
+    padding: 0 2rem;
+}
+
+.certificates-grid {
+    margin-top: 2rem;
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    gap: 2rem;
+}
+
+.certificate-container {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-grow: 1;
+    gap: 1rem;
+
+    background-color: var(--color-dark);
+    border: 1px solid var(--color-primary);
+
+    padding: 1rem;
+}
+
+.certificate-icon {
+    width: 4rem;
+    height: auto;
+}
+
+#services-section {
+    padding: 0 2rem;
+}

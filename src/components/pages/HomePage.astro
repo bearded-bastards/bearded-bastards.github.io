@@ -1,8 +1,154 @@
 ---
 import "../../styles/home_page.css";
+import services from "../../content/services";
+import Image from "astro/components/Image.astro";
+import NavLayout from "../layouts/NavLayout.astro";
+import translate from "../../utils/content/translation";
+import laurel_icon from "../../assets/icons/laurels.svg";
+import certifications from "../../content/certifications";
 import type { Languages } from "../../config/language_config";
+import owner_signature from "../../assets/images/owner_signature.svg";
+import owner_portrait from "../../assets/images/ashley_deployment.webp";
+import { contact_link, services_link } from "../../config/naviagtion_config";
 
 interface Props {
     language: Languages;
 };
 ---
+
+<NavLayout class="home-body" language={Astro.props.language}>
+    <!-- * Hero Section * -->
+    <section id="hero-section">
+        <div class="centered-title-container">
+            <h1 class="text-xl text-lighter">
+                {translate(Astro.props.language, "home_page", "hero_heading")}
+            </h1>
+
+            <h2 class="text-lg weight-normal">
+                {translate(Astro.props.language, "home_page", "hero_subheading")}
+            </h2>
+
+            <div class="bbgs-divider" />
+        </div>
+
+        <div class="hero-btn-container">
+            <a href={contact_link.href} class="bbgs-btn">
+                {translate(Astro.props.language, "home_page", "hero_contact_cta")}
+            </a>
+
+            <a href={services_link.href} class="bbgs-btn">
+                {translate(Astro.props.language, "home_page", "hero_learn_cta")}
+            </a>
+        </div>
+    </section>
+
+    <!-- * About Section * -->
+    <section id="about-section">
+        <Image
+            src={owner_portrait}
+            alt="Owner-Portrait"
+            loading="eager"
+            class="about-owner-portrait"
+        />
+
+        <div class="about-content-container">
+            <div class="bbgs-divider" />
+
+            <div class="title-container">
+                <h1 class="text-xl text-lighter">
+                    {translate(Astro.props.language, "home_page", "about_heading")}
+                </h1>
+
+                <h2 class="text-lg weight-normal">
+                    {translate(Astro.props.language, "home_page", "about_subheading")}
+                </h2>
+            </div>
+
+            <p class="about-paragraph">
+                {translate(Astro.props.language, "home_page", "about_paragraph")}
+            </p>
+
+            <Image
+                src={owner_signature}
+                alt="Owner-Signature"
+                loading="lazy"
+            />
+        </div>
+    </section>
+
+    <!-- * Certifications Section * -->
+    <section id="certifications-section">
+        <div class="centered-title-container">
+            <h1 class="text-xl text-lighter">
+                {translate(Astro.props.language, "home_page", "certifications_heading")}
+            </h1>
+
+            <h2 class="text-lg weight-normal">
+                {translate(Astro.props.language, "home_page", "certifications_subheading")}
+            </h2>
+
+            <div class="bbgs-divider" />
+        </div>
+
+        <div class="certificates-grid">
+            {certifications.map((certificate, index) => (
+                <div class="certificate-container">
+                    <Image
+                        src={laurel_icon}
+                        alt={`Certificate-${index}`}
+                        loading="lazy"
+                        class="certificate-icon"
+                    />
+
+                    <div>
+                        <div class="text-lg text-lighter">
+                            {translate(Astro.props.language, "certifications", certificate.title_translation_key)}
+                        </div>
+
+                        <div class="text-md text-light">
+                            {translate(Astro.props.language, "certifications", certificate.issuer_translation_key)}
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </section>
+
+    <!-- * Services Section * -->
+    <section id="services-section">
+        <div class="centered-title-container">
+            <h1 class="text-xl text-lighter">
+                {translate(Astro.props.language, "home_page", "services_heading")}
+            </h1>
+
+            <h2 class="text-lg weight-normal">
+                {translate(Astro.props.language, "home_page", "services_subheading")}
+            </h2>
+
+            <div class="bbgs-divider" />
+        </div>
+
+        <div>
+            {services.map((service) => (
+                <div>
+                    
+                </div>
+            ))}
+        </div>
+    </section>
+
+    <!-- * Contact Section * -->
+    <section id="contact-section">
+        <div class="title-container">
+            <h1 class="text-xl text-lighter">
+                {translate(Astro.props.language, "home_page", "contact_heading")}
+            </h1>
+
+            <h2 class="text-lg weight-normal">
+                {translate(Astro.props.language, "home_page", "contact_subheading")}
+            </h2>
+
+            <div class="bbgs-divider" />
+        </div>
+    </section>
+</NavLayout>
