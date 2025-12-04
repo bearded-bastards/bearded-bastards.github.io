@@ -11,6 +11,7 @@ import contact_information from "../../content/contact_information";
 import owner_signature from "../../assets/images/owner_signature.svg";
 import owner_portrait from "../../assets/images/ashley_deployment.webp";
 import { contact_link, services_link } from "../../config/naviagtion_config";
+import embed_bbgs_logo from "../../assets/logos/embed_bbgs.webp";
 
 interface Props {
     language: Languages;
@@ -18,6 +19,15 @@ interface Props {
 ---
 
 <NavLayout class="home-body" language={Astro.props.language}>
+    <home-page-canvas>
+        <Image
+            src={embed_bbgs_logo}
+            alt="Owner-Portrait"
+            loading="eager"
+            class="backdrop-logo"
+        />
+    </home-page-canvas>
+
     <!-- * Hero Section * -->
     <section id="hero-section">
         <div class="centered-title-container">
@@ -190,4 +200,6 @@ interface Props {
             ))}
         </div>
     </section>
+
+    <script src="../../scripts/home_page.ts" />
 </NavLayout>
