@@ -1,6 +1,5 @@
 ---
 import "../../styles/home_page.css";
-import services from "../../content/services";
 import Image from "astro/components/Image.astro";
 import NavLayout from "../layouts/NavLayout.astro";
 import translate from "../../utils/content/translation";
@@ -12,6 +11,7 @@ import contact_information from "../../content/contact_information";
 import owner_signature from "../../assets/images/owner_signature.svg";
 import owner_portrait from "../../assets/images/ashley_deployment.webp";
 import { contact_link, services_link } from "../../config/naviagtion_config";
+import services, { labor_cost_per_hour_usd, minimum_service_hours } from "../../content/services";
 
 interface Props {
     language: Languages;
@@ -165,7 +165,7 @@ const showcase_images: Record<string, {
                             </h3>
 
                             <span class="text-light">
-                                {`$${service.cost.toFixed(2)}`}
+                                {service.cost === 0.0 ? translate(Astro.props.language, "services", "cost_free") : `$${service.cost.toFixed(2)}`}
                             </span>
                         </div>
 
@@ -178,6 +178,14 @@ const showcase_images: Record<string, {
                 </div>
             ))}
         </div>
+
+        <p class="text-lighter text-md" style="margin-top: 2rem;">
+            {translate(Astro.props.language, "services", "labor_notice_prefix")}
+            {labor_cost_per_hour_usd.toFixed(2)}
+            {translate(Astro.props.language, "services", "labor_notice_center")}
+            {minimum_service_hours.toFixed(1)}
+            {translate(Astro.props.language, "services", "labor_notice_suffix")}
+        </p>
     </section>
 
     <!-- * Contact Section * -->

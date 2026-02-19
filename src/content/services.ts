@@ -15,6 +15,9 @@ interface Service {
     cost: number;
 };
 
+const minimum_service_hours: number = 2
+const labor_cost_per_hour_usd: number = 25.00
+
 const services: Service[] = [
     {
         preview_image: inspect_preview,
@@ -30,27 +33,27 @@ const services: Service[] = [
         preview_image: part_installation_preview,
         name_translation_key: "part_installation_title",
         description_translation_key: "part_installation_description",
-        cost: 75.00
+        cost: 50.00
     }, {
         preview_image: scope_ring_lapping_preview,
         name_translation_key: "scope_ring_lapping_title",
         description_translation_key: "scope_ring_lapping_description",
-        cost: 75.00
+        cost: 50.00
     }, {
         preview_image: basic_cleaning_preview,
         name_translation_key: "basic_cleaning_title",
         description_translation_key: "basic_cleaning_description",
-        cost: 80.00
+        cost: 30.00
     }, {
         preview_image: deep_cleaning_preview,
         name_translation_key: "deep_cleaning_title",
         description_translation_key: "deep_cleaning_description",
-        cost: 100.00
+        cost: 50.00
     }, {
         preview_image: ultrasonic_cleaning_preview,
         name_translation_key: "ultrasonic_cleaning_title",
         description_translation_key: "ultrasonic_cleaning_description",
-        cost: 150.00
+        cost: 75.00
     }, {
         preview_image: hydrographics_preview,
         name_translation_key: "hydrographics_title",
@@ -59,5 +62,5 @@ const services: Service[] = [
     }
 ];
 
-export { type Service };
+export { type Service, minimum_service_hours, labor_cost_per_hour_usd };
 export default services;

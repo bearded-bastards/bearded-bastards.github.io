@@ -1,4 +1,10 @@
 {
+    "cost_free": "Free",
+
+    "labor_notice_prefix": "*All services performed subject to a labor cost of $",
+    "labor_notice_center": "per hour, with a minimum service charge of",
+    "labor_notice_suffix": "hours.",
+    
     "inspect_title": "Inspection",
     "inspect_description": "A thorough assessment of the firearm to evaluate safety, functionality, and overall condition. This includes checking critical components for wear or damage, identifying potential issues, and providing recommendations for maintenance or repair.",
 
