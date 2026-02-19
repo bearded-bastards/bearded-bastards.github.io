@@ -54,12 +54,13 @@ const services: Service[] = [
         name_translation_key: "ultrasonic_cleaning_title",
         description_translation_key: "ultrasonic_cleaning_description",
         cost: 75.00
-    }, {
-        preview_image: hydrographics_preview,
-        name_translation_key: "hydrographics_title",
-        description_translation_key: "hydrographics_description",
-        cost: 200.00
-    }
+    },
+    // {
+    //     preview_image: hydrographics_preview,
+    //     name_translation_key: "hydrographics_title",
+    //     description_translation_key: "hydrographics_description",
+    //     cost: 200.00
+    // }
 ];
 
 export { type Service, minimum_service_hours, labor_cost_per_hour_usd };
